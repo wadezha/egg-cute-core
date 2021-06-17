@@ -1,0 +1,43 @@
+{
+  "name": "egg-cute-core",
+  "version": "1.0.0",
+  "description": "cute core for egg",
+  "types": "index.d.ts",
+  "eggPlugin": {
+    "name": "cuteCore"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "cute-core"
+  ],
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "egg": "latest-1",
+    "egg-bin": "^4.7.0",
+    "egg-ci": "^1.8.0",
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^7.0.0",
+    "utility": "^1.13.1",
+    "egg-cute-router": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wadezha/egg-cute-core.git"
+  },
+  "author": "wadezha",
+  "license": "MIT"
+}

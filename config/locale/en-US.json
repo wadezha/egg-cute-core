@@ -1,0 +1,9 @@
+{
+  "SYS_SUCCESS_MESSAGE": "success",
+  "SYS_ERROR_MESSAGE": "fail",
+  "SYS_ERROR_NOT_SET_ENTITY": "The entity is not set",
+  "SYS_ERROR_ENTITY_FORMAT": "The entity format is error",
+  "SYS_ERROR_NOT_ENTITY_ID": "The entity does not exist ID",
+  "SYS_ERROR_NOT_ENTITY_FIELDS": "The entity does not exist fields",
+  "SYS_ERROR_ENTITY_DATA": "The entity data is error"
+}
