@@ -28,6 +28,7 @@
   },
   "include": [
     "lib",
+    "app.ts",
     "index.ts",
     "config/config.default.ts",
     "package.json",

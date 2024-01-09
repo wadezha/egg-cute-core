@@ -7,11 +7,12 @@ interface CuteCoreOptions {
   code?: {
     success: Number,
     error: Number,
-  },
+  };
   msg?: {
     success: string;
     error: string;
-  },
+  };
+  entityPath: string;
 }
 
 declare module 'egg' {
