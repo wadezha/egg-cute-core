@@ -1,3 +1,4 @@
+.github
 logs/
 npm-debug.log
 node_modules/
@@ -9,6 +10,7 @@ logs/
 .vscode
 *.swp
 dist
+typings
 *.lock
 *.js
 !.autod.conf.js
