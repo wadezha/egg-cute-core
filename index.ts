@@ -12,7 +12,7 @@ interface CuteCoreOptions {
     success: string;
     error: string;
   };
-  entityPath: string;
+  loads: Array<string>;
 }
 
 declare module 'egg' {
