@@ -1,4 +1,5 @@
 
+export * from "./lib/base_error";
 export * from "./lib/base_entity";
 export * from "./lib/base_service";
 export * from "./lib/base_controller";
@@ -12,7 +13,6 @@ interface CuteCoreOptions {
     success: string;
     error: string;
   };
-  loads: Array<string>;
 }
 
 declare module 'egg' {

@@ -76,8 +76,29 @@ export class BaseController extends Controller {
     return this.ctx.request.body;
   }
 
-  protected getParam(): any {
-    return Object.assign(this.getQuery(), this.getBody());
+  protected getParams(): any {
+    return this.ctx.params;
+  }
+
+  protected getAllParams(): any {
+    return { ...this.ctx.request.body, ...this.ctx.request.query, ...this.ctx.params };
+  }
+
+  protected getValidateParams(headerKeys = ''): any {
+    let params = {};
+    if (JSON.stringify(this.ctx.request.body) !== '{}') {
+      Object.assign(params, { body: this.ctx.request.body });
+    }
+    if (JSON.stringify(this.ctx.request.query) !== '{}') {
+      Object.assign(params, { query: this.ctx.request.query });
+    }
+    if (JSON.stringify(this.ctx.params) !== '{}') {
+      Object.assign(params, { path: this.ctx.params });
+    }
+    if (headerKeys && Object.keys(this.ctx.headers).find(f => headerKeys.split(',').includes(f))) {
+      Object.assign(params, { headers: Object.assign({}, ...headerKeys.split(',').map(m => ({ [m]: this.ctx.headers[m] }))) });
+    }
+    return params;
   }
 
   /**
@@ -118,9 +139,9 @@ export class BaseController extends Controller {
   @Router.get('/page', '分页')
   protected async page(): Promise<void> {
     if (this.validateRule && !this.validateRule.page) {
-      await this.validator.validate(this.validateRule.page, this.getParam());
+      await this.validator.validate(this.validateRule.page, this.getAllParams());
     }
-    const data = await this.cuteService.page(this.condition, this.getParam(), this.entity);
+    const data = await this.cuteService.page(this.condition, this.getAllParams(), this.entity);
     this.res(data);
   }
 
@@ -130,9 +151,9 @@ export class BaseController extends Controller {
   @Router.get('/list', '列表')
   protected async list(): Promise<void> {
     if (this.validateRule && !this.validateRule.list) {
-      await this.validator.validate(this.validateRule.list, this.getParam());
+      await this.validator.validate(this.validateRule.list, this.getAllParams());
     }
-    const data = await this.cuteService.list(this.condition, this.getParam(), this.entity);
+    const data = await this.cuteService.list(this.condition, this.getAllParams(), this.entity);
     this.res(data);
   }
 
@@ -142,9 +163,9 @@ export class BaseController extends Controller {
   @Router.get('/info', '信息')
   protected async info(): Promise<void> {
     if (this.validateRule && !this.validateRule.info) {
-      await this.validator.validate(this.validateRule.info, this.getParam());
+      await this.validator.validate(this.validateRule.info, this.getAllParams());
     }
-    const data = await this.cuteService.info(this.getParam(), this.entity);
+    const data = await this.cuteService.info(this.getAllParams(), this.entity);
     this.res(data);
   }
 

@@ -7,8 +7,7 @@ const cuteCore = {
   msg: {
     success: 'SYS_SUCCESS_MESSAGE',
     error: 'SYS_ERROR_MESSAGE',
-  },
-  loads: []
+  }
 }
 
 export default cuteCore;

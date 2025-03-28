@@ -33,7 +33,6 @@ config.cuteCore = {
     success: 'SYS_SUCCESS_MESSAGE',
     error: 'SYS_ERROR_MESSAGE',
   },
-  loads: []
 };
 
 ```
