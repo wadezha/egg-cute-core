@@ -84,7 +84,7 @@ export class BaseController extends Controller {
     return { ...this.ctx.request.body, ...this.ctx.request.query, ...this.ctx.params };
   }
 
-  protected getValidateParams(headerKeys = ''): any {
+  protected getValidateParams(headerKeys: string = ''): any {
     let params = {};
     if (JSON.stringify(this.ctx.request.body) !== '{}') {
       Object.assign(params, { body: this.ctx.request.body });

@@ -1,0 +1,9 @@
+{
+    "SYS_SUCCESS_MESSAGE": "成功",
+    "SYS_ERROR_MESSAGE": "失败",
+    "SYS_ERROR_NOT_SET_ENTITY": "未设置实体",
+    "SYS_ERROR_ENTITY_FORMAT": "实体格式错误",
+    "SYS_ERROR_NOT_ENTITY_ID": "实体未设置ID",
+    "SYS_ERROR_NOT_ENTITY_FIELDS": "实体不存在属性",
+    "SYS_ERROR_ENTITY_DATA": "实体数据错误"
+}
