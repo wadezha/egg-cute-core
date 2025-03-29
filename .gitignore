@@ -12,6 +12,7 @@ logs/
 *.js
 !.autod.conf.js
 .eslintcache
+dist/
 typings/
 
 app/**/*.js

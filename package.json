@@ -1,6 +1,6 @@
 {
   "name": "egg-cute-core",
-  "version": "1.8.0",
+  "version": "1.10.0",
   "description": "cute core for egg",
   "types": "index.d.ts",
   "eggPlugin": {
@@ -13,15 +13,12 @@
     "cute-core"
   ],
   "devDependencies": {
-    "autod": "^3.1.2",
-    "egg": "^3.30.1",
-    "egg-bin": "^6.13.0",
-    "egg-ci": "^2.2.0",
+    "@types/supertest": "^2.0.0",
+    "egg": "^3.30.0",
+    "egg-bin": "^4.15.0",
     "egg-cute-router": "^1.6.0",
-    "eslint": "^9.21.0",
-    "eslint-config-egg": "^14.1.0",
-    "supertest": "^7.0.0",
-    "utility": "^1.13.1"
+    "eslint": "^8.0.0",
+    "eslint-config-egg": "^14.0.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -31,7 +28,7 @@
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
-    "tsc": "ets && tsc -p tsconfig.json",
+    "tsc": "ets && tsc -p tsconfig.json && copy README.md dist\\",
     "ci": "npm run lint && npm run cov",
     "autod": "autod"
   },

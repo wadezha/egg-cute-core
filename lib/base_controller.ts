@@ -1,6 +1,6 @@
 
 import { Controller, Context } from 'egg';
-import { Router } from 'egg-cute-router';
+import { router } from 'egg-cute-router';
 import { BaseService } from './base_service';
 import { BaseEntity } from './base_entity';
 import config from '../config/config.default';
@@ -136,7 +136,7 @@ export class BaseController extends Controller {
   /**
    * 分页查询数据
    */
-  @Router.get('/page', '分页')
+  @router('get', '/page', '分页')
   protected async page(): Promise<void> {
     if (this.validateRule && !this.validateRule.page) {
       await this.validator.validate(this.validateRule.page, this.getAllParams());
@@ -148,7 +148,7 @@ export class BaseController extends Controller {
   /**
    * 数据列表
    */
-  @Router.get('/list', '列表')
+  @router('get', '/list', '列表')
   protected async list(): Promise<void> {
     if (this.validateRule && !this.validateRule.list) {
       await this.validator.validate(this.validateRule.list, this.getAllParams());
@@ -160,7 +160,7 @@ export class BaseController extends Controller {
   /**
    * 信息
    */
-  @Router.get('/info', '信息')
+  @router('get', '/info', '信息')
   protected async info(): Promise<void> {
     if (this.validateRule && !this.validateRule.info) {
       await this.validator.validate(this.validateRule.info, this.getAllParams());
@@ -172,7 +172,7 @@ export class BaseController extends Controller {
   /**
    * 新增
    */
-  @Router.post('/insert', '新增')
+  @router('post', '/insert', '新增')
   protected async insert(): Promise<void> {
     if (this.validateRule && !this.validateRule.insert) {
       await this.validator.validate(this.validateRule.insert, this.getBody());
@@ -185,7 +185,7 @@ export class BaseController extends Controller {
   /**
    * 修改
    */
-  @Router.post('/update', '修改')
+  @router('post', '/update', '修改')
   protected async update(): Promise<void> {
     if (this.validateRule && !this.validateRule.update) {
       await this.validator.validate(this.validateRule.update, this.getBody());
@@ -198,7 +198,7 @@ export class BaseController extends Controller {
   /**
    * 删除
    */
-  @Router.post('/delete', '删除')
+  @router('post', '/delete', '删除')
   protected async delete(): Promise<void> {
     if (this.validateRule && !this.validateRule.delete) {
       await this.validator.validate(this.validateRule.delete, this.getBody());
